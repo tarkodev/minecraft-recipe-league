@@ -1,0 +1,4 @@
+Text Color: #FFFFFF
+Background Color: #2E1E96
+
+Je vais m'organiser dans ce fichier texte
