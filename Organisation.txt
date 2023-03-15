@@ -2,3 +2,21 @@ Text Color: #FFFFFF
 Background Color: #2E1E96
 
 Je vais m'organiser dans ce fichier texte
+
+Commande: php -S localhost:8000
+
+Top Serveur Minecraft
+
+Chronologie One Piece
+
+Requete AJAX
+Modification du DOM
+
+Minecraft Recipes League
+
+https://www.digminecraft.com/transportation_recipes/images/dirt_block.png
+https://github.com/PrismarineJS/minecraft-data/tree/master/data/pc/1.19.3
+https://github.com/PrismarineJS/minecraft-data/blob/master/data/pc/1.19.3/recipes.json
+
+https://youtu.be/I7LTqXRVcdg
+https://stackdiary.com/hover-tooltip-javascript/
