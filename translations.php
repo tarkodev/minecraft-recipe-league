@@ -1,6 +1,5 @@
 <?php
-include_once "script/translations.php";
-
+include_once "backend/translations.php";
 
 $_POST = json_decode(file_get_contents("php://input"), true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

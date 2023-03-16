@@ -1,6 +1,6 @@
 <?php
 
-include_once "script/items.php";
+include_once "backend/items.php";
 function getTranslations($lang)
 {
     // Read the JSON file

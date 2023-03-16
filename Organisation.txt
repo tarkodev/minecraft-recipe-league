@@ -20,3 +20,6 @@ https://github.com/PrismarineJS/minecraft-data/blob/master/data/pc/1.19.3/recipe
 
 https://youtu.be/I7LTqXRVcdg
 https://stackdiary.com/hover-tooltip-javascript/
+
+
+Langue: "1.19.4"
