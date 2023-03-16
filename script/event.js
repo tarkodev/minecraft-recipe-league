@@ -142,27 +142,56 @@ function getSelectedBox() {
     }
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 
-function updateInventory(recipeId, recipe) {
+function getRandomItemId() {
+    let itemId = getRandomInt(1100.)+1;
+
+    if((70 <= itemId && itemId <= 100) || (874 <= itemId && itemId <= 939) || (1036 <= itemId && itemId <= 1041) || itemId===393 ||itemId===282){
+        return getRandomItemId();
+    }
+
+    return itemId;
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+function updateInventory(recipeId, recipes) {
     let ingredientCache = [];
 
-    if(recipe["ingredients"]) {
-        ingredientCache = recipe["ingredients"]
-    } else {
-        let inshape = recipe["inShape"];
-        for(let i in inshape) {
-            let xxx = inshape[i];
-            for(let j in xxx) {
-                let x = xxx[j];
-                if(x != null) ingredientCache.push(x);
+    for (let r = 0; r < recipes.length; r++) {
+        let recipe = recipes[r];
+        if(recipe["ingredients"]) {
+            ingredientCache.push.apply(ingredientCache, recipe["ingredients"]);
+        } else {
+            let inshape = recipe["inShape"];
+            for(let i in inshape) {
+                let xxx = inshape[i];
+                for(let j in xxx) {
+                    let x = xxx[j];
+                    if(x != null) ingredientCache.push(x);
+                }
             }
         }
     }
 
+
     let ingredient = ingredientCache.filter((x, i) => ingredientCache.indexOf(x) === i);
 
-    for (let i = 0; i < ingredient.length; i++) {
+    while(ingredient.length < 18) {
+        ingredient.push(getRandomItemId());
+    }
+
+    shuffleArray(ingredient);
+
+    for (let i = 0; i < 18; i++) {
         setBoxItem("inventory_box" + i, ingredient[i]);
     }
 }
@@ -175,7 +204,7 @@ function start() {
         "id": -1
     }, json => {
         setBoxItem("crafting_box_result", json["id"]);
-        updateInventory(json["id"], json["recipe"][0])
+        updateInventory(json["id"], json["recipe"])
     })
 }
 
@@ -196,67 +225,67 @@ function checkCrafting() {
     ajaxRequest("recipes.php", {
         "id": document.getElementById("crafting_box_result").firstElementChild.id,
     }, json => {
-        let recipe = json["recipe"][0];
+        let recipes = json["recipe"];
 
-        let craft = getCraftingAsTab();
-        let good = craft.filter(Number).length !== 0;
+        for (let i = 0; i < recipes.length; i++) {
+            let recipe = recipes[i];
 
-        console.log(craft);
-        if(recipe["ingredients"]) {
-            let ingredients = recipe["ingredients"];
+            let craft = getCraftingAsTab();
+            let good = craft.filter(Number).length !== 0;
 
-            for (let i = 0; i < 9; i++) {
-                for (let j = 0; j < ingredients.length; j++) {
-                    if(craft[i] === ingredients[j]) {
-                        ingredients.splice(j, 1);
-                        craft[i] = null;
-                    }
-                }
+            if(recipe["ingredients"]) {
+                let ingredients = recipe["ingredients"];
 
-                if(craft[i] != null) good = false;
-            }
-            if(ingredients.length !== 0) good = false;
-        } else if(recipe["inShape"]) {
-            let inShape = recipe["inShape"];
-
-            let y_shape_length = inShape.length;
-            let x_shape_length = inShape[0].length;
-
-            let shapeCrafted = 0;
-            for(let y_rightup = 0; y_rightup < 4-y_shape_length; y_rightup++) {
-                for(let x_rightup = 0; x_rightup < 4-x_shape_length; x_rightup++) {
-                    let isShapeValid = true;
-
-                    for(let y_shape = 0; y_shape < y_shape_length; y_shape++) {
-                        for(let x_shape = 0; x_shape < x_shape_length; x_shape++) {
-                            if(craft[x_rightup+y_rightup*3+x_shape+y_shape*3] !== inShape[y_shape][x_shape]) {
-                                isShapeValid = false;
-                            }
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < ingredients.length; j++) {
+                        if(craft[i] === ingredients[j]) {
+                            ingredients.splice(j, 1);
+                            craft[i] = null;
                         }
                     }
 
-                    if(isShapeValid) {
-                        let canBeCrafted = true;
-                        for(let i = 0; i < 9; i++) {
-                            let craft_table_x = i % 3;
-                            let craft_table_y = Math.floor(i / 3);
-                            console.log(x_rightup + ":" + y_rightup);
-                            console.log(craft_table_x + ":" + craft_table_y);
-                            console.log(y_rightup <= craft_table_y <= (y_rightup+y_shape_length-1));
-                            if(!((y_rightup <= craft_table_y && craft_table_y < (y_rightup+y_shape_length)) && (x_rightup <= craft_table_x && craft_table_x < (x_rightup+x_shape_length)))) {
-                                console.log(i);
-                                if(craft[i] != null) canBeCrafted = false;
+                    if(craft[i] != null) good = false;
+                }
+                if(ingredients.length !== 0) good = false;
+            } else if(recipe["inShape"]) {
+                let inShape = recipe["inShape"];
+
+                let y_shape_length = inShape.length;
+                let x_shape_length = inShape[0].length;
+
+                let shapeCrafted = 0;
+                for(let y_rightup = 0; y_rightup < 4-y_shape_length; y_rightup++) {
+                    for(let x_rightup = 0; x_rightup < 4-x_shape_length; x_rightup++) {
+                        let isShapeValid = true;
+
+                        for(let y_shape = 0; y_shape < y_shape_length; y_shape++) {
+                            for(let x_shape = 0; x_shape < x_shape_length; x_shape++) {
+                                if(craft[x_rightup+y_rightup*3+x_shape+y_shape*3] !== inShape[y_shape][x_shape]) {
+                                    isShapeValid = false;
+                                }
                             }
                         }
-                        if(canBeCrafted) shapeCrafted++;
+
+                        if(isShapeValid) {
+                            let canBeCrafted = true;
+                            for(let i = 0; i < 9; i++) {
+                                let craft_table_x = i % 3;
+                                let craft_table_y = Math.floor(i / 3);
+                                if(!((y_rightup <= craft_table_y && craft_table_y < (y_rightup+y_shape_length)) && (x_rightup <= craft_table_x && craft_table_x < (x_rightup+x_shape_length)))) {
+                                    console.log(i);
+                                    if(craft[i] != null) canBeCrafted = false;
+                                }
+                            }
+                            if(canBeCrafted) shapeCrafted++;
+                        }
                     }
                 }
+
+                if(shapeCrafted !== 1) good = false;
             }
 
-            if(shapeCrafted !== 1) good = false;
+            if(good) document.getElementById("crafting_box_result").firstElementChild.style.background = "green";
         }
-
-        if(good) document.getElementById("crafting_box_result").firstElementChild.style.background = "green";
     })
 
 

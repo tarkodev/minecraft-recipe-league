@@ -14,6 +14,7 @@ function getIdItemMap()
     }
 
     return $items;
+
 }
 
 function getMinecraftIdFromId($id)

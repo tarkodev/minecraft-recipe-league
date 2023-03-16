@@ -1,4 +1,6 @@
 body{
+    background-size: 3%;
+    background-image: url("assets/textures/block/netherite_block.png");
     background-color: #2E1E96;
     color: #FFFFFF;
 }
@@ -8,6 +10,74 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+
+footer {
+    /* pied de page a une taille de fonte reduite de 10% */
+    font-size: 90%;
+    /* écrit en italique */
+    font-style: italic;
+
+    /* pied de page alignés au centre */
+    text-align: center;
+    color: white;
+
+    padding-top: 10px;
+}
+
+#titre {
+    /* titre du document alignés au centre */
+    text-align: center;
+    color: #A49B98;
+    text-shadow: -5px 5px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    font-size: 300%;
+    font-family: 'Minecrafter', sans-serif;
+    text-rendering: geometricPrecision;
+}
+
+#description {
+    /* titre du document alignés au centre */
+    text-align: center;
+    color: white;
+    font-family: 'Minecraftia', sans-serif;
+}
+
+#start {
+    /* pas de bordure, bords arrondis */
+    border: none;
+    border-radius: 15px;
+
+    font-size: 42px;
+    background-color: lightgoldenrodyellow;
+
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#start:hover {
+    /* change de couleur lorsque le curseur de l’utilisateur passe dessus */
+    background-color: aquamarine;
+}
+
+#jeu {
+    /* 72*11 */
+    max-width: 720px;
+    max-height: 720px;
+
+    /* flex */
+    display: block;
+    flex-wrap: wrap;
+
+    border: 5px solid firebrick;
+    background-size: 10%;
+    image-rendering: pixelated;
+    background-image: url("assets/textures/block/dirt.png");
+    margin: 0 auto;
+}
+
 
 #crafting_grid {
     /* flex */
@@ -52,9 +122,6 @@ body{
     margin: 0%;
 }
 
-#titre {
-    font-family: 'Minecraftia', sans-serif;
-}
 
 #crafting_box_result {
     width: 128px;
