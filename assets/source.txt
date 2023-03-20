@@ -1,5 +1,4 @@
 -> .minecraft/versions/1.19.4.jar
-
 - utility:
 for translations and some textures.
 - folders:
@@ -7,7 +6,7 @@ textures/
 lang/
 
 -> https://github.com/PrismarineJS/minecraft-data/tree/master/data/pc/1.18
-utility:
+- utility:
 simplified way to get all items and recipes via id
 - files:
 items.json

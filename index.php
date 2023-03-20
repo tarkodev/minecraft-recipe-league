@@ -1,45 +1,35 @@
 <?php
     session_start();
 
-    $title = "Minecraft Recipes League";
-    $author = "Gabriel MOURAD";
+    $_SESSION["author"] = "Gabriel MOURAD";
+    $_SESSION["title"] = "Minecraft Recipes League";
+    $_SESSION["description"] = "Projet de Programmation Web 2";
 
-    $_SESSION["lang"] =  "en_us";
+    include_once "server/php/translations.php"
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title><?php echo $title; ?></title>
-    <meta name="description" content="Projet de Programmation Web 2">
-    <meta name="author" content="Par <?php echo $author; ?>">
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/minecraftia">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/minecrafter-alt">
+    <title><?php echo $_SESSION["title"]; ?></title>
+    <meta name="description" content="<?php echo $_SESSION["description"]; ?>">
+    <link rel="stylesheet" href="server/style/styles.css">
+    <?php include_once "./server/html/head.php" ?>
 </head>
 
 <body>
     <header>
-        <p id="tooltip-text">Chargement...</p>
+        <?php include_once "./server/html/header.php" ?>
     </header>
 
     <section>
         <div id="explication">
-            <h1 id="titre"><?php echo $title; ?></h1>
-
-            <p id="description">
-                Essaye de trouver les craft le plus rapidement possible!
-            </p>
+            <p id="description" class="translation"></p>
         </div>
 
         <div id="jeu">
-
-            <form id="langForm">
-                <label for=langEdit>Language: </label><input id = langEdit type="text" value="en_us" required>
-                <button type="submit">Go</button>
+            <form id="postForm">
+                <button type="submit" class="translation" id="another"></button>
             </form>
-
-            <button id="start" type="button" onclick="start()">Démarrer</button>
 
             <br><br>
 
@@ -56,10 +46,10 @@
     </section>
 
     <footer>
-        Programmation Web 2 &mdash; 2023<br>Projet réalisé par Gabriel MOURAD
+        <?php include_once "./server/html/footer.php" ?>
     </footer>
 
-    <script src="script/event.js"></script>
+    <script src="server/script/scripts.js"></script>
 </body>
 </html>
 

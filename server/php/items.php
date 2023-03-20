@@ -26,5 +26,5 @@ function getTextureFromId($id)
 {
     if (file_exists("assets/textures/item/" . getMinecraftIdFromId($id) . ".png")) return "assets/textures/item/" . getMinecraftIdFromId($id) . ".png";
     return "https://minecraftitemids.com/item/128/" . getMinecraftIdFromId($id) . ".png";
-    //return "assets/textures/item/" . getMinecraftIdFromId(405) . ".png";
 }
+

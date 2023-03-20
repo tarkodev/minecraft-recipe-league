@@ -1,6 +1,6 @@
-body{
+body {
     background-size: 3%;
-    background-image: url("assets/textures/block/netherite_block.png");
+    background-image: url("../../assets/textures/block/netherite_block.png");
     background-color: #2E1E96;
     color: #FFFFFF;
 }
@@ -9,6 +9,19 @@ body{
     width: 500px;
     display: flex;
     flex-wrap: wrap;
+}
+
+h1 {
+    /* titre du document alignés au centre */
+    text-align: center;
+    color: #A49B98;
+    text-shadow: -5px 5px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+    font-size: 200%;
+    font-family: 'Minecrafter', sans-serif;
+    text-rendering: geometricPrecision;
 }
 
 footer {
@@ -24,19 +37,6 @@ footer {
     padding-top: 10px;
 }
 
-#titre {
-    /* titre du document alignés au centre */
-    text-align: center;
-    color: #A49B98;
-    text-shadow: -5px 5px 0 #000,
-    1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-    font-size: 300%;
-    font-family: 'Minecrafter', sans-serif;
-    text-rendering: geometricPrecision;
-}
-
 #description {
     /* titre du document alignés au centre */
     text-align: center;
@@ -44,8 +44,9 @@ footer {
     font-family: 'Minecraftia', sans-serif;
 }
 
-#start {
+#another {
     /* pas de bordure, bords arrondis */
+    display: block;
     border: none;
     border-radius: 15px;
 
@@ -57,7 +58,7 @@ footer {
     padding-right: 50px;
 }
 
-#start:hover {
+#another:hover {
     /* change de couleur lorsque le curseur de l’utilisateur passe dessus */
     background-color: aquamarine;
 }
@@ -65,7 +66,7 @@ footer {
 #jeu {
     /* 72*11 */
     max-width: 720px;
-    max-height: 720px;
+    max-height: 900px;
 
     /* flex */
     display: block;
@@ -74,10 +75,15 @@ footer {
     border: 5px solid firebrick;
     background-size: 10%;
     image-rendering: pixelated;
-    background-image: url("assets/textures/block/dirt.png");
-    margin: 0 auto;
+    background-image: url("../../assets/textures/block/dirt.png");
+    margin: auto auto;
 }
 
+@media (max-width: 768px) {
+    #jeu {
+        width: 90%;
+    }
+}
 
 #crafting_grid {
     /* flex */
@@ -85,9 +91,12 @@ footer {
     flex-wrap: wrap;
 
     /* 4*36(case) = 108 */
+
     max-width: 216px;
     max-height: 216px;
 
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
 }
 
@@ -100,6 +109,8 @@ footer {
     max-width: 648px;
     max-height: 648px;
 
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
 }
 
@@ -119,7 +130,6 @@ footer {
 .minecraft_box img {
     width: 100%;
     height: 100%;
-    margin: 0%;
 }
 
 

@@ -24,3 +24,4 @@ function getRandomRecipeId()
 
     return $result;
 }
+

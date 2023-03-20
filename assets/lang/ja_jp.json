@@ -1,4 +1,17 @@
 {
+    "description": "Essaye de trouver les craft le plus rapidement possible!",
+    "another": "Un autre!",
+    "prog_web": "Programmation Web 2 — 2023",
+    "made_by": "Projet réalisé par ",
+    "lang_selection": "Choix du language: ",
+    "update": "Update",
+
+    "fr_fr": "Français",
+    "en_us": "English",
+    "en_pt": "Pirate Speak",
+    "ja_jp": "日本語",
+
+
     "addServer.add": "\u5b8c\u4e86",
     "addServer.enterIp": "\u30b5\u30fc\u30d0\u30fc\u30a2\u30c9\u30ec\u30b9",
     "addServer.enterName": "\u30b5\u30fc\u30d0\u30fc\u540d",
