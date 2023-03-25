@@ -1,4 +1,42 @@
-let lang = "fr_fr";
+function getCookie(cookieName) {
+    return document.cookie
+        .split("; ")
+        .find((row) => row.startsWith(cookieName + "="))
+        ?.split("=")[1];
+}
+
+function setCookieLanguage(value) {
+    document.cookie = "lang=" + value;
+}
+if(getCookie("lang") === undefined) {
+    setCookieLanguage("fr_fr");
+}
+let lang = getCookie("lang");
+
+async function updateStats() {
+    await ajaxRequest("user_total_get.php", {"id":getCookie("userId")}, json => {
+        document.getElementById("user_total").innerHTML = json["total"];
+    })
+    await ajaxRequest("users_total_get.php", {}, json => {
+        document.getElementById("users_total").innerHTML = json["result"];
+    })
+    await ajaxRequest("users_size_get.php", {}, json => {
+        document.getElementById("users_size").innerHTML = json["result"];
+    })
+}
+
+async function updateUsers() {
+    if(getCookie("userId") === undefined) {
+        await ajaxRequest("database_users.php", {}, json => {
+            document.cookie = "userId=" + json["id"];
+            updateStats();
+        });
+    } else {
+        await ajaxRequest("database_users.php", {"id":getCookie("userId")}, json => {
+            updateStats();
+        });
+    }
+}
 
 // Load Crafting Grid
 for (let i = 0; i < 9; i++) {
@@ -12,15 +50,17 @@ for (let i = 0; i < 18; i++) {
 
 addBox("crafting_result", "crafting_box_result");
 
-
 //For Language
 const getForm = document.getElementById("getForm");
 
 getForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     lang = getForm.querySelector("select[name='lang']").value;
+    setCookieLanguage(lang);
     await translateAll();
 })
+
+getForm.querySelector("select[name='lang']").value = getCookie("lang");
 
 // For Starting the Game
 const postForm = document.getElementById("postForm")
@@ -29,12 +69,14 @@ postForm.addEventListener("submit", async (e) => {
     await start();
 });
 
-translateAll();
+window.addEventListener("load", async () => {
+    updateUsers().then(() => translateAll().then(() => start()));
+});
 
 async function translateAll() {
     for (let toTranslate of document.getElementsByClassName("translation")) {
-        await ajaxTranslation(toTranslate.id, (json) => {
-            console.log(json);
+
+        await ajaxTranslation(toTranslate.getAttribute("translation"), (json) => {
             toTranslate.innerHTML = json["translation"];
         });
     }
@@ -171,10 +213,6 @@ function getRandomInt(max) {
 function getRandomItemId() {
     let itemId = getRandomInt(1100.) + 1;
 
-    if ((70 <= itemId && itemId <= 100) || (874 <= itemId && itemId <= 939) || (1036 <= itemId && itemId <= 1041) || itemId === 393 || itemId === 282) {
-        return getRandomItemId();
-    }
-
     return itemId;
 }
 
@@ -294,7 +332,6 @@ async function checkCrafting() {
                                 let craft_table_x = i % 3;
                                 let craft_table_y = Math.floor(i / 3);
                                 if (!((y_rightup <= craft_table_y && craft_table_y < (y_rightup + y_shape_length)) && (x_rightup <= craft_table_x && craft_table_x < (x_rightup + x_shape_length)))) {
-                                    console.log(i);
                                     if (craft[i] != null) canBeCrafted = false;
                                 }
                             }
@@ -306,7 +343,12 @@ async function checkCrafting() {
                 if (shapeCrafted !== 1) good = false;
             }
 
-            if (good) document.getElementById("crafting_box_result").firstElementChild.style.background = "green";
+            if (good) {
+                ajaxRequest("user_total_add.php", {"id":getCookie("userId")}, json => {
+                    updateStats();
+                });
+                document.getElementById("crafting_box_result").firstElementChild.style.background = "green";
+            }
         }
     })
 }

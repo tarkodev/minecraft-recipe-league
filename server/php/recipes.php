@@ -18,10 +18,6 @@ function getRandomRecipeId()
 
     $result = $recipes_keys[$recipe_random_index];
 
-    if((70 <= $result && $result <= 100) || (874 <= $result && $result <= 939) || (1036 <= $result && $result <= 1041) || $result==393 ||$result==282){
-        return getRandomRecipeId();
-    }
-
     return $result;
 }
 

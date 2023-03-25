@@ -1,10 +1,14 @@
 {
-    "description": "Essaye de trouver les craft le plus rapidement possible!",
-    "another": "Un autre!",
-    "prog_web": "Programmation Web 2 — 2023",
-    "made_by": "Projet réalisé par ",
-    "lang_selection": "Choix du language: ",
-    "update": "Update",
+    "description": "Arr, seek the craftin' recipe usin' the inventory below, matey!",
+    "another": "Another, ye say!",
+    "prog_web": "Web Codin' 2 — 2023",
+    "made_by": "Project buil' by ",
+    "lang_selection": "Language choosin': ",
+    "update": "Update, arr!",
+
+    "user_total": "Num'er o' successful grub",
+    "users_total": "Num'er o' successful grub by all sea dogs",
+    "users_size": "Num'er o' unique sea dogs",
 
     "fr_fr": "Français",
     "en_us": "English",

@@ -12,6 +12,7 @@
 <head>
     <title><?php echo $_SESSION["title"]; ?></title>
     <meta name="description" content="<?php echo $_SESSION["description"]; ?>">
+
     <link rel="stylesheet" href="server/style/styles.css">
     <?php include_once "./server/html/head.php" ?>
 </head>
@@ -21,17 +22,15 @@
         <?php include_once "./server/html/header.php" ?>
     </header>
 
-    <section>
-        <div id="explication">
-            <p id="description" class="translation"></p>
-        </div>
+    <main>
+
+        <p class="translation" translation="description" id="description"></p>
+
 
         <div id="jeu">
             <form id="postForm">
-                <button type="submit" class="translation" id="another"></button>
+                <button type="submit" class="translation" translation="another" id="another"></button>
             </form>
-
-            <br><br>
 
             <div id="grid_area">
 
@@ -43,9 +42,27 @@
                 <div class="minecraft_grid" id="inventory_grid"></div>
             </div>
         </div>
-    </section>
+
+
+    </main>
 
     <footer>
+        <table>
+            <tbody>
+            <tr>
+                <th scope="row" class="translation" translation="user_total"></th>
+                <td id="user_total"></td>
+            </tr>
+            <tr>
+                <th scope="row" class="translation" translation="users_total"></th>
+                <td id="users_total"></td>
+            </tr>
+            <tr>
+                <th scope="row" class="translation" translation="users_size"></th>
+                <td id="users_size"></td>
+            </tr>
+            </tbody>
+        </table>
         <?php include_once "./server/html/footer.php" ?>
     </footer>
 

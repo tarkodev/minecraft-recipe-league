@@ -1,3 +1,7 @@
+<!--
+Ancien code, je le laisse au cas où
+-->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -39,10 +43,10 @@
             image-rendering: pixelated;
         }
         .cell.x::before {
-            background-image: url("assets/textures/item/iron_sword.png"); /* Image de l'épée Minecraft */
+            background-image: url("assets/minecraft/item/iron_sword.png"); /* Image de l'épée Minecraft */
         }
         .cell.o::before {
-            background-image: url("assets/textures/item/iron_pickaxe.png"); /* Image de pioche Minecraft */
+            background-image: url("assets/minecraft/item/iron_pickaxe.png"); /* Image de pioche Minecraft */
         }
     </style>
 </head>

@@ -1,16 +1,19 @@
 {
-    "description": "Essaye de trouver les craft le plus rapidement possible!",
+    "description": "Essaye de trouver le craft de l'objet encadré grâce à l'inventaire ci-dessous!",
     "another": "Un autre!",
     "prog_web": "Programmation Web 2 — 2023",
     "made_by": "Projet réalisé par ",
     "lang_selection": "Sélection du langage: ",
     "update": "Mettre à jour",
 
+    "user_total": "Nombre de recettes réussies",
+    "users_total": "Nombre de recettes réussies par l'ensemble des joueurs",
+    "users_size": "Nombre de joueurs unique",
+
     "fr_fr": "Français",
     "en_us": "English",
     "en_pt": "Pirate Speak",
     "ja_jp": "日本語",
-
 
     "addServer.add": "Termin\u00e9",
     "addServer.enterIp": "Adresse du serveur",

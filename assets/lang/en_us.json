@@ -1,10 +1,14 @@
 {
-  "description": "Try to find the craft as quickly as possible",
+  "description": "Try to find the crafting recipe using the inventory below!",
   "another": "Another!",
   "prog_web": "Web Programming 2 — 2023",
   "made_by": "Project realized by ",
   "lang_selection": "Language selection: ",
   "update": "Update",
+
+  "user_total": "Number of successful recipes",
+  "users_total": "Number of successful recipes by all players",
+  "users_size": "Number of unique players",
 
   "fr_fr": "Français",
   "en_us": "English",

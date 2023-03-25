@@ -1,10 +1,14 @@
 {
-    "description": "Essaye de trouver les craft le plus rapidement possible!",
-    "another": "Un autre!",
-    "prog_web": "Programmation Web 2 — 2023",
-    "made_by": "Projet réalisé par ",
-    "lang_selection": "Choix du language: ",
-    "update": "Update",
+    "description": "以下のインベントリを使用して、枠に入ったアイテムのクラフトレシピを見つけてください！",
+    "another": "もう一つ！",
+    "prog_web": "ウェブプログラミング 2 — 2023",
+    "made_by": "プロジェクト作成者：",
+    "lang_selection": "言語の選択：",
+    "update": "更新",
+
+    "user_total": "成功したレシピの数",
+    "users_total": "すべてのプレイヤーによる成功したレシピの数",
+    "users_size": "ユニークなプレイヤーの数",
 
     "fr_fr": "Français",
     "en_us": "English",

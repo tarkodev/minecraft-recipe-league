@@ -1,14 +1,8 @@
 body {
     background-size: 3%;
-    background-image: url("../../assets/textures/block/netherite_block.png");
+    background-image: url("../../assets/minecraft/block/netherite_block.png");
     background-color: #2E1E96;
     color: #FFFFFF;
-}
-
-.wrapper {
-    width: 500px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 h1 {
@@ -44,6 +38,7 @@ footer {
     font-family: 'Minecraftia', sans-serif;
 }
 
+
 #another {
     /* pas de bordure, bords arrondis */
     display: block;
@@ -51,11 +46,14 @@ footer {
     border-radius: 15px;
 
     font-size: 42px;
-    background-color: lightgoldenrodyellow;
+    background-color: #170817;
 
     margin: 0 auto;
     padding-left: 50px;
     padding-right: 50px;
+    color: green;
+
+    font-family: 'Minecrafter', sans-serif;
 }
 
 #another:hover {
@@ -75,14 +73,16 @@ footer {
     border: 5px solid firebrick;
     background-size: 10%;
     image-rendering: pixelated;
-    background-image: url("../../assets/textures/block/dirt.png");
+    background-image: url("../../assets/minecraft/block/dirt.png");
     margin: auto auto;
 }
 
 @media (max-width: 768px) {
     #jeu {
-        width: 90%;
+        max-width: 100%;
     }
+
+
 }
 
 #crafting_grid {
@@ -165,3 +165,21 @@ p#tooltip-text {
         opacity: 1;
     }
 }
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: "Minecraftia", Arial, sans-serif;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+    background-size: 10%;
+    background-image: url("../../assets/minecraft/block/redstone_block.png");
+}
+
