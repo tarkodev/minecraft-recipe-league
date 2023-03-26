@@ -1,3 +1,6 @@
+
+//fix de l'avertissement
+
 function getCookie(cookieName) {
     return document.cookie
         .split("; ")
@@ -6,12 +9,13 @@ function getCookie(cookieName) {
 }
 
 function setCookieLanguage(value) {
-    document.cookie = "lang=" + value;
+    document.cookie = "lang=" + value + "; SameSite=Lax";
 }
 if(getCookie("lang") === undefined) {
     setCookieLanguage("fr_fr");
 }
 let lang = getCookie("lang");
+
 
 async function updateStats() {
     await ajaxRequest("user_total_get.php", {"id":getCookie("userId")}, json => {
@@ -28,7 +32,7 @@ async function updateStats() {
 async function updateUsers() {
     if(getCookie("userId") === undefined) {
         await ajaxRequest("database_users.php", {}, json => {
-            document.cookie = "userId=" + json["id"];
+            document.cookie = "userId=" + json["id"] + "; SameSite=Lax";
             updateStats();
         });
     } else {
@@ -61,6 +65,8 @@ getForm.addEventListener("submit", async (e) => {
 })
 
 getForm.querySelector("select[name='lang']").value = getCookie("lang");
+
+let canStart = true;
 
 // For Starting the Game
 const postForm = document.getElementById("postForm")
@@ -116,7 +122,7 @@ function addBox(gridId, boxId) {
                 let selectedBox = getSelectedBox();
 
                 if (selectedBox != null) {
-                    await setBoxItem(this.id, selectedBox.firstElementChild.id);
+                    await setBoxItem(this.id, selectedBox.firstElementChild.getAttribute("minecraft_id"));
                 } else {
                     tooltip.style.display = 'none';
                     resetBox(this.id);
@@ -134,7 +140,7 @@ function addBox(gridId, boxId) {
         if (box.hasChildNodes()) {
             tooltip.style.display = 'block';
 
-            await ajaxTranslation(parseInt(box.firstElementChild.id), json => {
+            await ajaxTranslation(parseInt(box.firstElementChild.getAttribute("minecraft_id")), json => {
                 tooltip.innerHTML = json["translation"];
             });
         }
@@ -168,7 +174,8 @@ async function setBoxItem(boxId, itemId) {
     }, json => {
         let box = document.getElementById(boxId);
         let img = document.createElement('img');
-        img.id = itemId;
+        img.setAttribute("minecraft_id", itemId);
+        //img.id = itemId;
         img.alt = json["minecraft_id"];
         img.src = json["texture_path"];
         box.innerHTML = "";
@@ -211,7 +218,7 @@ function getRandomInt(max) {
 
 
 function getRandomItemId() {
-    let itemId = getRandomInt(1100.) + 1;
+    let itemId = getRandomInt(1150) + 1;
 
     return itemId;
 }
@@ -259,13 +266,16 @@ async function updateInventory(recipeId, recipes) {
 
 
 async function start() {
-    reset();
-    await ajaxRequest("recipes.php", {
-        "id": -1
-    }, json => {
-        setBoxItem("crafting_box_result", json["id"]);
-        updateInventory(json["id"], json["recipe"])
-    })
+    if(canStart) {
+        canStart = false;
+        reset();
+        await ajaxRequest("recipes.php", {
+            "id": -1
+        }, json => {
+            //to prevent multiple start
+            setBoxItem("crafting_box_result", json["id"]).then(() => updateInventory(json["id"], json["recipe"]).then(() => canStart = true))
+        })
+    }
 }
 
 function getCraftingAsTab() {
@@ -275,7 +285,7 @@ function getCraftingAsTab() {
         if (document.getElementById(id).firstElementChild === null) {
             tab[i] = null;
         } else {
-            tab[i] = parseInt(document.getElementById(id).firstElementChild.id);
+            tab[i] = parseInt(document.getElementById(id).firstElementChild.getAttribute("minecraft_id"));
         }
     }
     return tab;
@@ -283,7 +293,7 @@ function getCraftingAsTab() {
 
 async function checkCrafting() {
     await ajaxRequest("recipes.php", {
-        "id": parseInt(document.getElementById("crafting_box_result").firstElementChild.id),
+        "id": parseInt(document.getElementById("crafting_box_result").firstElementChild.getAttribute("minecraft_id")),
     }, json => {
         let recipes = json["recipe"];
 

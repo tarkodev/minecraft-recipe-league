@@ -1,5 +1,5 @@
 <?php
-include_once "database/database.php";
+include_once "database/User.php";
 
 
 $_POST = json_decode(file_get_contents("php://input"), true);
@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (is_numeric($id)) {
             $id = intval($id);
 
-            $return["total"] = getUserTotal($id);
+            $user = new User($id);
+            $return["total"] = $user->getUserTotal();
 
             echo json_encode($return);
         } else {

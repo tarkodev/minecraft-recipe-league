@@ -1,4 +1,5 @@
 <?php
+    header('Set-Cookie: cross-site-cookie=PHPSESSID; SameSite=Lax');
     session_start();
 
     $_SESSION["author"] = "Gabriel MOURAD";

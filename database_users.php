@@ -1,5 +1,6 @@
 <?php
-include_once "database/database.php";
+include_once "database/Database.php";
+include_once "database/User.php";
 
 $_POST = json_decode(file_get_contents("php://input"), true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (is_numeric($id)) {
             $id = intval($id);
 
-            $return["id"] = generateUserIfNotHereAndGetId($id);
+            $user = new User($id);
+            $return["id"] = $user->generateUserIfNotHereAndGetId();
 
             echo json_encode($return);
         } else {
@@ -18,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode(array("error" => "Les données envoyées ne sont pas valides."));
         }
     } else {
-        $return["id"] = generateUserAndGetId();
+        $database = new Database();
+        $return["id"] = $database->generateUserAndGetId();
 
         echo json_encode($return);
     }
