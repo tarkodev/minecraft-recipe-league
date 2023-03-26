@@ -1,13 +1,11 @@
 <!--
-Ancien code, je le laisse au cas où
+Ancien code accessible via un easter egg (CSS JS et HTML dans le même fichier pas bien d'après l'énoncé mais c'est que du bonus donc je le compacte)
 -->
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morpion Minecraft</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,7 +49,6 @@ Ancien code, je le laisse au cas où
     </style>
 </head>
 <body>
-    <h1>Morpion Minecraft</h1>
     <div class="grid" id="grid"></div>
 
     <script>
@@ -82,8 +79,7 @@ Ancien code, je le laisse au cas où
 
             const winner = checkForWinner();
             if (winner) {
-		    const winnerName = winner === 'x' ? "Épée" : "Pioche";
-                alert(`Le joueur ${winnerName} a gagné !`);
+                alert(`gg!`);
             }
         }
 

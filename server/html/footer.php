@@ -9,4 +9,3 @@
     </select>
     <button type="submit" class="translation" translation="update"></button>
 </form>
-

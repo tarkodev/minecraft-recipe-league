@@ -179,7 +179,6 @@ td {
     border: 1px solid #ccc;
     text-align: center;
     font-size: 16px;
-    background-size: 10%;
-    background-image: url("../../assets/minecraft/block/redstone_block.png");
+    background-size: 45px;
 }
 

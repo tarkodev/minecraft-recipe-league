@@ -79,6 +79,8 @@ window.addEventListener("load", async () => {
     updateUsers().then(() => translateAll().then(() => start()));
 });
 
+
+
 async function translateAll() {
     for (let toTranslate of document.getElementsByClassName("translation")) {
 
@@ -361,5 +363,37 @@ async function checkCrafting() {
             }
         }
     })
+}
+
+
+/* EASTER EGGGGGGGGGG */
+let verif = [];
+for (let i = 0; i < document.getElementsByTagName("tbody").length; i++) {
+    console.log("xd");
+    let tbody = document.getElementsByTagName("tbody")[i];
+    for (let j = 0; j < tbody.children.length; j++) {
+        let tchild = tbody.children[j];
+        for (let k = 0; k < tchild.children.length; k++) {
+            let tclick = tchild.children[k];
+            tclick.style.backgroundImage = "url('../../assets/minecraft/block/redstone_block.png')"
+            verif.push(tclick);
+            tclick.addEventListener("click", async function (event) {
+                console.log(tclick.style.backgroundImage);
+                if(tclick.style.backgroundImage === 'url("../../assets/minecraft/block/redstone_block.png")') {
+                    tclick.style.backgroundImage  = "url('../../assets/minecraft/block/nether_bricks.png')";
+                } else {
+                    tclick.style.backgroundImage = "url('../../assets/minecraft/block/redstone_block.png')"
+                }
+                let checkNumb = 0;
+                for (let l = 0; l < verif.length; l++) {
+                    let check = verif[l].style.backgroundImage === "url(\"../../assets/minecraft/block/nether_bricks.png\")";
+                    if(check) checkNumb++;
+                }
+                if(checkNumb >= 6) {
+                    window.open(window.location.href + "morpion.php","_blank")
+                }
+            });
+        }
+    }
 }
 
