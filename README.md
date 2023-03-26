@@ -30,7 +30,7 @@ Ce ne sont pas pas des dépendances mais les différentes sources qui forme mes 
 
 ### [FabricMC](https://fabricmc.net/)
 #### J'ai créé un mod pour générer toute les images du jeu en bonne qualité (256*256) grâce à l'API FabricMC
-Dossier:
+#### Dossier:
 - `fabric/`
 - `textures/`
 
