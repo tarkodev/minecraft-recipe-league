@@ -6,7 +6,7 @@ Projet de Programmation Web 2 - 4ème Semestre de la Licence d'Informatique à S
 
 ## Concept
 
-J'ai une idée d'application mobile à faire, ce projet est donc pour moi une occasion d'en faire un prototype afin de le faire tester à des amis et mesurer à quel point l'application serait amusante!
+J'ai une idée d'application mobile à faire, ce projet est donc pour moi une occasion d'en faire un prototype afin de le faire tester à des amis et mesurer à quel point l'application serait amusante! (`concept.png` étant le premier prototype d'à quoi le projet va ressembler)
 
 Le but de ce jeu est de trouver la recette d'un objet donné aléatoirement parmis toute les recettes présente dans Minecraft grâce à un inventaire de 18 objets (l'équivalent de 2 colonnes dans le jeu de base) contenant les ingrédients de la recette ainsi que des objets aléatoire pour semer le doute.
 
