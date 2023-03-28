@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e778de18-5f19-495d-99eb-35fcacbdbeef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/pdo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/style/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/style/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +97,7 @@
       <workItem from="1679723050960" duration="17843000" />
       <workItem from="1679744108131" duration="12906000" />
       <workItem from="1679820896905" duration="2859000" />
-      <workItem from="1679984161852" duration="1994000" />
+      <workItem from="1679984161852" duration="2455000" />
     </task>
     <servers />
   </component>
