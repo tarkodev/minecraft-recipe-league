@@ -177,7 +177,6 @@ async function setBoxItem(boxId, itemId) {
         let box = document.getElementById(boxId);
         let img = document.createElement('img');
         img.setAttribute("minecraft_id", itemId);
-        //img.id = itemId;
         img.alt = json["minecraft_id"];
         img.src = json["texture_path"];
         box.innerHTML = "";
@@ -369,7 +368,6 @@ async function checkCrafting() {
 /* EASTER EGGGGGGGGGG */
 let verif = [];
 for (let i = 0; i < document.getElementsByTagName("tbody").length; i++) {
-    console.log("xd");
     let tbody = document.getElementsByTagName("tbody")[i];
     for (let j = 0; j < tbody.children.length; j++) {
         let tchild = tbody.children[j];
@@ -378,7 +376,6 @@ for (let i = 0; i < document.getElementsByTagName("tbody").length; i++) {
             tclick.style.backgroundImage = "url('../../assets/minecraft/block/redstone_block.png')"
             verif.push(tclick);
             tclick.addEventListener("click", async function (event) {
-                console.log(tclick.style.backgroundImage);
                 if(tclick.style.backgroundImage === 'url("../../assets/minecraft/block/redstone_block.png")') {
                     tclick.style.backgroundImage  = "url('../../assets/minecraft/block/nether_bricks.png')";
                 } else {

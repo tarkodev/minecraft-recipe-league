@@ -1,21 +1,24 @@
 <?php
 include_once "database/pdo.php";
-class User {
+
+class User
+{
 
     private $pdo;
     private $userId;
 
-    public function __construct($userId){
+    public function __construct($userId) {
         $this->pdo = getPdo();
         $this->userId = $userId;
     }
+
     function generateUserIfNotHereAndGetId() {
         $sql = "SELECT EXISTS(SELECT * FROM users WHERE id = :value)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(['value' => $this->userId]);
         $exist = $stmt->fetchColumn();
 
-        if($exist) {
+        if ($exist) {
             return $this->userId;
         } else {
             $sql = "INSERT INTO users(id, total) VALUES (:id, 0)";

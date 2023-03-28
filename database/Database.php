@@ -1,12 +1,12 @@
 <?php
 include_once "database/pdo.php";
 
-
-class Database {
+class Database
+{
 
     private $pdo;
 
-    public function __construct(){
+    public function __construct() {
         $this->pdo = getPdo();
     }
 

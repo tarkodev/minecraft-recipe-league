@@ -1,7 +1,6 @@
 <?php
 
-function getIdRecipeMap()
-{
+function getIdRecipeMap() {
     // Read the JSON file
     $recipes_raw = file_get_contents('assets/recipes.json');
 
@@ -9,8 +8,7 @@ function getIdRecipeMap()
     return json_decode($recipes_raw, true);
 }
 
-function getRandomRecipeId()
-{
+function getRandomRecipeId() {
     $recipes_keys = array_keys(getIdRecipeMap());
 
     $recipe_count = count($recipes_keys);
