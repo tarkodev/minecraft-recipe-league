@@ -3,7 +3,7 @@
 function getPdo() {
     header("Content-Security-Policy: default-src 'self'");
 
-    $database_file = "database/database.sqlite";
+    $database_file = "../database.sqlite";
 
     $pdo = new PDO("sqlite:" . $database_file);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e778de18-5f19-495d-99eb-35fcacbdbeef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morpion.php" beforeDir="false" afterPath="$PROJECT_DIR$/morpion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/php/items.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/php/items.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/php/recipes.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/php/recipes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/php/translations.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/php/translations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/script/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/script/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations.php" beforeDir="false" afterPath="$PROJECT_DIR$/translations.php" afterDir="false" />
-    </list>
+    <list default="true" id="e778de18-5f19-495d-99eb-35fcacbdbeef" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,11 +59,11 @@
       <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\assets\lang" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\server\html" />
+      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\server\request" />
+      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\database\class" />
+      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\database\request" />
       <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\assets" />
-      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\database" />
-      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site" />
-      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\server\css" />
-      <recent name="C:\Users\moura\OneDrive\Education\Web2\web-tp-s4-projet-site\server" />
     </key>
   </component>
   <component name="RunManager">
@@ -106,7 +95,7 @@
       <workItem from="1679723050960" duration="17843000" />
       <workItem from="1679744108131" duration="12906000" />
       <workItem from="1679820896905" duration="2859000" />
-      <workItem from="1679984161852" duration="3652000" />
+      <workItem from="1679984161852" duration="6208000" />
     </task>
     <servers />
   </component>

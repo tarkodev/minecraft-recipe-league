@@ -2,7 +2,7 @@
 
 function getIdRecipeMap() {
     // Read the JSON file
-    $recipes_raw = file_get_contents('assets/recipes.json');
+    $recipes_raw = file_get_contents('../../assets/recipes.json');
 
     // Decode the JSON file
     return json_decode($recipes_raw, true);

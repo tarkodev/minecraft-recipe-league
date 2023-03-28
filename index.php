@@ -15,12 +15,12 @@ include_once "server/php/translations.php"
     <meta name="description" content="<?php echo $_SESSION["description"]; ?>">
 
     <link rel="stylesheet" href="server/style/styles.css">
-    <?php include_once "./server/html/head.php" ?>
+    <?php include_once "server/html/head.php" ?>
 </head>
 
 <body>
 <header>
-    <?php include_once "./server/html/header.php" ?>
+    <?php include_once "server/html/header.php" ?>
 </header>
 
 <main>
@@ -64,7 +64,7 @@ include_once "server/php/translations.php"
         </tr>
         </tbody>
     </table>
-    <?php include_once "./server/html/footer.php" ?>
+    <?php include_once "server/html/footer.php" ?>
 </footer>
 
 <script src="server/script/scripts.js"></script>

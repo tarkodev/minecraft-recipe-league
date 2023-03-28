@@ -1,5 +1,5 @@
 <!--
-Ancien code accessible via un easter egg (CSS JS et HTML dans le même fichier pas bien d'après l'énoncé mais c'est que du bonus donc je le compacte)
+Ancien code accessible via un easter egg (CSS JS et HTML dans le même fichier pas bien d'après l'énoncé mais c'est que du bonus donc je le compacte
 -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,11 +45,11 @@ Ancien code accessible via un easter egg (CSS JS et HTML dans le même fichier p
         }
 
         .cell.x::before {
-            background-image: url("assets/minecraft/item/iron_sword.png"); /* Image de l'épée Minecraft */
+            background-image: url("../../assets/minecraft/item/iron_sword.png"); /* Image de l'épée Minecraft */
         }
 
         .cell.o::before {
-            background-image: url("assets/minecraft/item/iron_pickaxe.png"); /* Image de pioche Minecraft */
+            background-image: url("../../assets/minecraft/item/iron_pickaxe.png"); /* Image de pioche Minecraft */
         }
     </style>
 </head>

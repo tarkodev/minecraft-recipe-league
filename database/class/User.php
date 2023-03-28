@@ -1,5 +1,5 @@
 <?php
-include_once "database/pdo.php";
+include_once "pdo.php";
 
 class User
 {

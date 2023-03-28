@@ -1,5 +1,5 @@
 <?php
-include_once "database/Database.php";
+include_once "../class/Database.php";
 
 
 $_POST = json_decode(file_get_contents("php://input"), true);

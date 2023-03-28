@@ -1,9 +1,10 @@
 <?php
+include_once "items.php";
 
-include_once "server/php/items.php";
+
 function getTranslations($lang) {
     // Read the JSON file
-    $translations_raw = file_get_contents('assets/lang/' . $lang . '.json');
+    $translations_raw = file_get_contents('../../assets/lang/' . $lang . '.json');
 
     // Decode the JSON file
     return json_decode($translations_raw, true);

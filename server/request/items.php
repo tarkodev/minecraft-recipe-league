@@ -1,5 +1,5 @@
 <?php
-include_once "database/User.php";
+include_once "../php/items.php";
 
 
 $_POST = json_decode(file_get_contents("php://input"), true);
@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (is_numeric($id)) {
             $id = intval($id);
 
-            $user = new User($id);
-            $return["total"] = $user->getUserTotal();
+            $return["minecraft_id"] = getMinecraftIdFromId($id);
+            $return["texture_path"] = getTextureFromId($id);
 
             echo json_encode($return);
         } else {

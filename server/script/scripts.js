@@ -18,25 +18,25 @@ let lang = getCookie("lang");
 
 
 async function updateStats() {
-    await ajaxRequest("user_total_get.php", {"id":getCookie("userId")}, json => {
+    await ajaxRequest("database/request/user_total_get.php", {"id":getCookie("userId")}, json => {
         document.getElementById("user_total").innerHTML = json["total"];
     })
-    await ajaxRequest("users_total_get.php", {}, json => {
+    await ajaxRequest("database/request/users_total_get.php", {}, json => {
         document.getElementById("users_total").innerHTML = json["result"];
     })
-    await ajaxRequest("users_size_get.php", {}, json => {
+    await ajaxRequest("database/request/users_size_get.php", {}, json => {
         document.getElementById("users_size").innerHTML = json["result"];
     })
 }
 
 async function updateUsers() {
     if(getCookie("userId") === undefined) {
-        await ajaxRequest("database_users.php", {}, json => {
+        await ajaxRequest("database/request/database_users.php", {}, json => {
             document.cookie = "userId=" + json["id"] + "; SameSite=Lax";
             updateStats();
         });
     } else {
-        await ajaxRequest("database_users.php", {"id":getCookie("userId")}, json => {
+        await ajaxRequest("database/request/database_users.php", {"id":getCookie("userId")}, json => {
             updateStats();
         });
     }
@@ -106,7 +106,7 @@ async function ajaxRequest(routes, content, jsonCallback) {
 
 // Pour simplifier la traduction
 async function ajaxTranslation(id, jsonCallback) {
-    await ajaxRequest("translations.php", {
+    await ajaxRequest("server/request/translations.php", {
         "id": id,
         "lang": lang,
     }, jsonCallback)
@@ -171,7 +171,7 @@ function reset() {
 
 async function setBoxItem(boxId, itemId) {
     itemId = parseInt(itemId);
-    await ajaxRequest("items.php", {
+    await ajaxRequest("server/request/items.php", {
         "id": itemId,
     }, json => {
         let box = document.getElementById(boxId);
@@ -270,7 +270,7 @@ async function start() {
     if(canStart) {
         canStart = false;
         reset();
-        await ajaxRequest("recipes.php", {
+        await ajaxRequest("server/request/recipes.php", {
             "id": -1
         }, json => {
             //to prevent multiple start
@@ -293,7 +293,7 @@ function getCraftingAsTab() {
 }
 
 async function checkCrafting() {
-    await ajaxRequest("recipes.php", {
+    await ajaxRequest("server/request/recipes.php", {
         "id": parseInt(document.getElementById("crafting_box_result").firstElementChild.getAttribute("minecraft_id")),
     }, json => {
         let recipes = json["recipe"];
@@ -355,7 +355,7 @@ async function checkCrafting() {
             }
 
             if (good) {
-                ajaxRequest("user_total_add.php", {"id":getCookie("userId")}, json => {
+                ajaxRequest("database/request/user_total_add.php", {"id":getCookie("userId")}, json => {
                     updateStats();
                 });
                 document.getElementById("crafting_box_result").firstElementChild.style.background = "green";
@@ -387,7 +387,7 @@ for (let i = 0; i < document.getElementsByTagName("tbody").length; i++) {
                     if(check) checkNumb++;
                 }
                 if(checkNumb >= 6) {
-                    window.open(window.location.href + "morpion.php","_blank")
+                    window.open(window.location.href + "server/html/morpion.php","_blank")
                 }
             });
         }

@@ -1,5 +1,5 @@
 <?php
-include_once "server/php/translations.php";
+include_once "../php/translations.php";
 
 
 $_POST = json_decode(file_get_contents("php://input"), true);
