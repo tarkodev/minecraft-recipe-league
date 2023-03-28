@@ -47,11 +47,11 @@ footer {
 
     font-size: 42px;
     background-color: #170817;
-
+    color: #58D500;
     margin: 0 auto;
     padding-left: 50px;
     padding-right: 50px;
-    color: green;
+
 
     font-family: 'Minecrafter', sans-serif;
 }
@@ -59,6 +59,11 @@ footer {
 #another:hover {
     /* change de couleur lorsque le curseur de l’utilisateur passe dessus */
     background-color: aquamarine;
+
+    color: #003A00;
+
+
+
 }
 
 #jeu {
