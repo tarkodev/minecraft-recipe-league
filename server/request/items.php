@@ -16,8 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             echo json_encode($return);
         } else {
-            http_response_code(400);
-            echo json_encode(array("error" => "Les données envoyées ne sont pas valides."));
+            /*http_response_code(400);
+            echo json_encode(array("error" => "Les données envoyées ne sont pas valides."));*/
+            // Ce code provoque une erreur sur l'ordinateur de la fac, je ne comprends pas pourquoi alors je le commente, peut être qu'il marche chez vous?
         }
     }
 }
