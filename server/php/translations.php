@@ -1,5 +1,5 @@
 <?php
-include_once "items.php";
+include_once __DIR__ . "/items.php";
 
 
 function getTranslations($lang) {

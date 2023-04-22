@@ -1,6 +1,3 @@
-
-//fix de l'avertissement
-
 function getCookie(cookieName) {
     return document.cookie
         .split("; ")

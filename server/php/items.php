@@ -22,6 +22,6 @@ function getMinecraftIdFromId($id) {
 
 function getTextureFromId($id) {
     if (file_exists("../../assets/textures/" . getMinecraftIdFromId($id) . ".png")) return "assets/textures/" . getMinecraftIdFromId($id) . ".png";
-    return "https://minecraftitemids.com/item/128/" . getMinecraftIdFromId($id) . ".png"; //take from a website if assets not here, just in case (but there is not all textures)
+    return "https://minecraftitemids.com/item/128/" . getMinecraftIdFromId($id) . ".png"; //take from a website if assets not here, just in case
 }
 
