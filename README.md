@@ -38,3 +38,25 @@ Ce ne sont pas pas des dépendances mais les différentes sources qui forme mes 
 
 Je trouve ce prototype fun et addictif, il parle à presque tout le monde vu que Minecraft est le jeu le plus vendu de l'histoire. Le potientiel de l'application est donc validé et je vais pouvoir en faire une application 
 
+## Démarrage rapide
+
+Prérequis:
+- PHP 8+ (CLI) installé
+- Extension SQLite pour PHP (`php-sqlite3`)
+
+Installation (Ubuntu/Debian):
+- `sudo apt-get update && sudo apt-get install -y php-cli php-sqlite3`
+
+Lancement:
+- `php -S 0.0.0.0:7418 -t /home/gabriel/cursor/minecraft-recipe-league`
+
+Utilisation:
+- Ouvrir le navigateur sur `http://localhost:7418`
+- La base `database/database.sqlite` est créée automatiquement au premier accès
+
+Structure:
+- `index.php` point d’entrée
+- `server/request/*.php` endpoints JSON (recettes, items, traductions)
+- `database/request/*.php` endpoints JSON (utilisateurs/stats via SQLite)
+- `assets/` données du jeu (items, recettes, traductions, textures)
+

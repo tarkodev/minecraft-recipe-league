@@ -12,7 +12,7 @@ function getRandomRecipeId() {
     $recipes_keys = array_keys(getIdRecipeMap());
 
     $recipe_count = count($recipes_keys);
-    $recipe_random_index = rand(0, $recipe_count);
+    $recipe_random_index = rand(0, $recipe_count - 1);
 
     $result = $recipes_keys[$recipe_random_index];
 
