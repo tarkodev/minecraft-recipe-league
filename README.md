@@ -40,6 +40,8 @@ Je trouve ce prototype fun et addictif, il parle à presque tout le monde vu que
 
 ## Démarrage rapide
 
+### Option 1: Avec PHP directement
+
 Prérequis:
 - PHP 8+ (CLI) installé
 - Extension SQLite pour PHP (`php-sqlite3`)
@@ -48,11 +50,26 @@ Installation (Ubuntu/Debian):
 - `sudo apt-get update && sudo apt-get install -y php-cli php-sqlite3`
 
 Lancement:
-- `php -S 0.0.0.0:7418 -t /home/gabriel/cursor/minecraft-recipe-league`
+- `php -S 0.0.0.0:7418 -t ./`
 
 Utilisation:
 - Ouvrir le navigateur sur `http://localhost:7418`
 - La base `database/database.sqlite` est créée automatiquement au premier accès
+
+### Option 2: Avec Docker Compose
+
+Prérequis:
+- Docker et Docker Compose installés
+
+Lancement:
+- `docker-compose up -d`
+
+Utilisation:
+- Ouvrir le navigateur sur `http://localhost:7418`
+- La base `database/database.sqlite` est créée automatiquement au premier accès
+
+Arrêt:
+- `docker-compose down`
 
 Structure:
 - `index.php` point d’entrée

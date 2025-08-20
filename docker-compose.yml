@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    container_name: minecraft-recipe-league
+    ports:
+      - "7418:7418"
+    volumes:
+      - .:/var/www/html:rw
+    restart: unless-stopped
