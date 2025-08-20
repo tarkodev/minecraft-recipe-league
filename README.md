@@ -62,17 +62,15 @@ Prérequis:
 - Docker et Docker Compose installés
 
 Lancement:
-- `docker-compose up -d`
+`docker-compose up -d`
 
 Utilisation:
 - Ouvrir le navigateur sur `http://localhost:7418`
 - La base `database/database.sqlite` est créée automatiquement au premier accès
 
-Arrêt:
-- `docker-compose down`
+## Structure du projet
 
-Structure:
-- `index.php` point d’entrée
+- `index.php` point d'entrée
 - `server/request/*.php` endpoints JSON (recettes, items, traductions)
 - `database/request/*.php` endpoints JSON (utilisateurs/stats via SQLite)
 - `assets/` données du jeu (items, recettes, traductions, textures)
