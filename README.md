@@ -52,10 +52,6 @@ Installation (Ubuntu/Debian):
 Lancement:
 - `php -S 0.0.0.0:7418 -t ./`
 
-Utilisation:
-- Ouvrir le navigateur sur `http://localhost:7418`
-- La base `database/database.sqlite` est créée automatiquement au premier accès
-
 ### Option 2: Avec Docker Compose
 
 Prérequis:
@@ -64,7 +60,7 @@ Prérequis:
 Lancement:
 `docker compose up -d`
 
-Utilisation:
+### Utilisation
 - Ouvrir le navigateur sur `http://localhost:7418`
 - La base `database/database.sqlite` est créée automatiquement au premier accès
 
