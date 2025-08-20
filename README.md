@@ -62,7 +62,7 @@ Prérequis:
 - Docker et Docker Compose installés
 
 Lancement:
-`docker-compose up -d`
+`docker compose up -d`
 
 Utilisation:
 - Ouvrir le navigateur sur `http://localhost:7418`
